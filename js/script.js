@@ -7,5 +7,11 @@ new Vue({
 		},
 
 		tasks: []
+	},
+
+	methods: {
+		submitTask() {
+			this.tasks.push({ task: this.form.task });
+		}
 	}
 });

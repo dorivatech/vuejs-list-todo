@@ -23,8 +23,13 @@
 			<header>
 				<h1>Lista de Tarefas</h1>
 				<form @submit.prevent.stop="submitTask()">
-					<input type="text" v-model="form.task" placeholder="Tarefa" />
-					<button type="submit">Adicionar</button>
+					<div class="form-group">
+						<input type="text" v-model="form.task" class="form-control" placeholder="Tarefa" />
+					</div>
+					
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Adicionar</button>
+					</div>
 				</form>
 			</header>
 
@@ -43,9 +48,9 @@
 							<td>{{ index }}</td>
 							<td>{{ task.task }}</td>
 							<td>
-								<button @click.prevent.stop="edit(index)">Actualizar</button>
-								<button @click.prevent.stop="update(index)">Feito</button>
-								<button @click.prevent.stop="destroy(index)">Apagar</button>
+								<button @click.prevent.stop="edit(index)" class="btn btn-info">Actualizar</button>
+								<button @click.prevent.stop="update(index)" class="btn btn-primary">Feito</button>
+								<button @click.prevent.stop="destroy(index)" class="btn btn-danger">Apagar</button>
 							</td>
 						</tr>
 					</tbody>

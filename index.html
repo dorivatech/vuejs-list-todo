@@ -20,7 +20,13 @@
 	
 	<body>
 		<main id="app">
-			Olá {{ name }}!
+			<header>
+				<h1>Lista de Tarefas</h1>
+				<form @submit.prevent.stop="submitTask()">
+					<input type="text" v-model="form.task" placeholder="Tarefa" />
+					<button type="submit">Adicionar</button>
+				</form>
+			</header>
 		</main>
 		
 		<!-- JS -->

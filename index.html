@@ -28,7 +28,7 @@
 					</div>
 					
 					<div class="form-group">
-						<button type="submit" class="btn btn-success">Adicionar</button>
+						<button type="submit" class="btn btn-success btn-rounded">Adicionar</button>
 					</div>
 				</form>
 			</header>
@@ -39,18 +39,18 @@
 						<tr>
 							<th>ID</th>
 							<th>Tarefa</th>
-							<th>Ações</th>
+							<th class="text-center">Ações</th>
 						</tr>
 					</thead>
 
 					<tbody>
 						<tr v-for="(task, index) in tasks">
-							<td>{{ index }}</td>
+							<td>{{ index + 1 }}</td>
 							<td>{{ task.task }}</td>
-							<td>
-								<button @click.prevent.stop="edit(index)" class="btn btn-info">Actualizar</button>
-								<button @click.prevent.stop="update(index)" class="btn btn-primary">Feito</button>
-								<button @click.prevent.stop="destroy(index)" class="btn btn-danger">Apagar</button>
+							<td class="text-center">
+								<button @click.prevent.stop="edit(index)" class="btn btn-info btn-rounded btn-sm">Actualizar</button>
+								<button @click.prevent.stop="update(index)" class="btn btn-primary btn-rounded btn-sm">Feito</button>
+								<button @click.prevent.stop="destroy(index)" class="btn btn-danger btn-rounded btn-sm">Apagar</button>
 							</td>
 						</tr>
 					</tbody>

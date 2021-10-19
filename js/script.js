@@ -11,7 +11,10 @@ new Vue({
 
 	methods: {
 		store() {
-			this.tasks.push({ task: this.form.task });
+			if (!this.form.task)
+				alert('Preencha a tarefa')
+			else
+				this.tasks.push({ task: this.form.task });
 		}
 	}
 });

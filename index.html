@@ -53,6 +53,10 @@
 								<button @click.prevent.stop="destroy(index)" class="btn btn-danger btn-rounded btn-sm">Apagar</button>
 							</td>
 						</tr>
+
+						<tr v-if="tasks.length <= 0">
+							<td colspan="3" class="text-center">Sem tarefas</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>

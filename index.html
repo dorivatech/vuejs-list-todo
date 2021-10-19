@@ -27,6 +27,30 @@
 					<button type="submit">Adicionar</button>
 				</form>
 			</header>
+
+			<section>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Tarefa</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr v-for="(task, index) in tasks">
+							<td>{{ index }}</td>
+							<td>{{ task.task }}</td>
+							<td>
+								<button @click.prevent.stop="edit(index)">Actualizar</button>
+								<button @click.prevent.stop="update(index)">Feito</button>
+								<button @click.prevent.stop="destroy(index)">Apagar</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 		</main>
 		
 		<!-- JS -->

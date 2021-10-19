@@ -22,7 +22,7 @@
 		<main id="app">
 			<header>
 				<h1>Lista de Tarefas</h1>
-				<form @submit.prevent.stop="submitTask()">
+				<form @submit.prevent.stop="store()">
 					<div class="form-group">
 						<input type="text" v-model="form.task" class="form-control" placeholder="Tarefa" />
 					</div>

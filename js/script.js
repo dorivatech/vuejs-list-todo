@@ -10,7 +10,7 @@ new Vue({
 	},
 
 	methods: {
-		submitTask() {
+		store() {
 			this.tasks.push({ task: this.form.task });
 		}
 	}

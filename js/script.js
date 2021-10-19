@@ -17,6 +17,11 @@ new Vue({
 				this.tasks.push({ task: this.form.task });
 				this.form.task = '';
 			}
+		},
+
+		destroy(index) {
+			this.tasks.splice(index, 1);
+			alert('Tarefa apagada')
 		}
 	}
 });

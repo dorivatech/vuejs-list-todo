@@ -13,8 +13,10 @@ new Vue({
 		store() {
 			if (!this.form.task)
 				alert('Preencha a tarefa')
-			else
+			else {
 				this.tasks.push({ task: this.form.task });
+				this.form.task = '';
+			}
 		}
 	}
 });

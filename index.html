@@ -22,13 +22,15 @@
 		<main id="app">
 			<header>
 				<h1>Lista de Tarefas</h1>
-				<form @submit.prevent.stop="store()">
+				<form @submit.prevent.stop="(form.index || form.index == 0) ? update() : store()">
 					<div class="form-group">
 						<input type="text" v-model="form.task" class="form-control" placeholder="Tarefa" />
 					</div>
 					
 					<div class="form-group">
-						<button type="submit" class="btn btn-success btn-rounded">Adicionar</button>
+						<button type="submit" class="btn btn-success btn-rounded">
+							{{ (form.index || form.index == 0) ? 'Actualizar' : 'Adicionar' }}
+						</button>
 					</div>
 				</form>
 			</header>
@@ -49,7 +51,7 @@
 							<td>{{ task.task }}</td>
 							<td class="text-center">
 								<button @click.prevent.stop="edit(index)" class="btn btn-info btn-rounded btn-sm">Actualizar</button>
-								<button @click.prevent.stop="update(index)" class="btn btn-primary btn-rounded btn-sm">Feito</button>
+								<button @click.prevent.stop="update(index)" class="btn btn-warning btn-rounded btn-sm">Feito</button>
 								<button @click.prevent.stop="destroy(index)" class="btn btn-danger btn-rounded btn-sm">Apagar</button>
 							</td>
 						</tr>

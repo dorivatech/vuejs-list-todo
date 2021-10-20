@@ -3,10 +3,11 @@ new Vue({
 
 	data: {
 		form: {
+			index: null,
 			task: ''
 		},
 
-		tasks: []
+		tasks: [{task: 'Olá'}]
 	},
 
 	methods: {
@@ -17,6 +18,16 @@ new Vue({
 				this.tasks.push({ task: this.form.task });
 				this.form.task = '';
 			}
+		},
+
+		edit(index) {
+			this.form.index = index;
+			this.form.task = this.tasks[index].task;
+		},
+
+		update() {
+			this.tasks[this.form.index].task = this.form.task;
+			this.form.task = '';
 		},
 
 		destroy(index) {

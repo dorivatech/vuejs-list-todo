@@ -28,6 +28,7 @@ new Vue({
 		update() {
 			this.tasks[this.form.index].task = this.form.task;
 			this.form.task = '';
+			this.form.index = null;
 		},
 
 		destroy(index) {

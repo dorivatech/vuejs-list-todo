@@ -48,7 +48,8 @@
 					<tbody>
 						<tr v-for="(task, index) in tasks">
 							<td>{{ index + 1 }}</td>
-							<td>{{ task.task }}</td>
+							<td v-if="!task.status">{{ task.task }}</td>
+							<td v-if="task.status"><del>{{ task.task }}</del></td>
 							<td class="text-center">
 								<button @click.prevent.stop="edit(index)" class="btn btn-info btn-rounded btn-sm">Actualizar</button>
 								<button @click.prevent.stop="update(index)" class="btn btn-warning btn-rounded btn-sm">Feito</button>

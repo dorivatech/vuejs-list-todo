@@ -7,7 +7,7 @@ new Vue({
 			task: ''
 		},
 
-		tasks: [{task: 'Olá'}]
+		tasks: [{status: true, task: 'Olá'}]
 	},
 
 	methods: {

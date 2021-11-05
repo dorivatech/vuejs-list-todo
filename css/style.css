@@ -45,6 +45,9 @@ form {
   .btn.btn-sm {
     padding: 10px;
     font-size: 10pt; }
+  .btn[disabled] {
+    opacity: .8;
+    cursor: not-allowed; }
 
 .btn-success {
   color: white;

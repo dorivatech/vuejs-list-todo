@@ -55,6 +55,11 @@ form {
 		padding: 10px;
 		font-size: 10pt;
 	}
+
+	&[disabled] {
+		opacity: .8;
+		cursor: not-allowed;
+	}
 }
 
 .btn-success { color: white; background-color: #28a745; }

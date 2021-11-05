@@ -15,7 +15,7 @@ new Vue({
 			if (!this.form.task)
 				alert('Preencha a tarefa')
 			else {
-				this.tasks.push({ task: this.form.task });
+				this.tasks.push({ status: false, task: this.form.task });
 				this.form.task = '';
 			}
 		},

@@ -34,6 +34,10 @@ new Vue({
 		destroy(index) {
 			this.tasks.splice(index, 1);
 			alert('Tarefa apagada')
+		},
+
+		done(index) {
+			this.tasks[index].status = true;
 		}
 	}
 });

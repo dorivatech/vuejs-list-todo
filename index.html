@@ -52,7 +52,7 @@
 							<td v-if="task.status"><del>{{ task.task }}</del></td>
 							<td class="text-center">
 								<button @click.prevent.stop="edit(index)" class="btn btn-info btn-rounded btn-sm">Actualizar</button>
-								<button @click.prevent.stop="update(index)" class="btn btn-warning btn-rounded btn-sm">Feito</button>
+								<button @click.prevent.stop="done(index)" :disabled="task.status" class="btn btn-warning btn-rounded btn-sm">Feito</button>
 								<button @click.prevent.stop="destroy(index)" class="btn btn-danger btn-rounded btn-sm">Apagar</button>
 							</td>
 						</tr>

@@ -23,7 +23,7 @@ new Vue({
 				alert('Preencha a tarefa')
 			else {
 				this.tasks.push({ status: false, task: this.form.task });
-				localStorage.setItem('tasks', JSON.stringify(this.tasks))
+				localStorage.setItem('tasks', JSON.stringify(this.tasks));
 				this.form.task = '';
 			}
 		},
@@ -32,11 +32,12 @@ new Vue({
 			this.form.index = index;
 			this.form.task = this.tasks[index].task;
 		},
-
+		
 		update() {
 			this.tasks[this.form.index].task = this.form.task;
 			this.form.task = '';
 			this.form.index = null;
+			localStorage.setItem('tasks', JSON.stringify(this.tasks));
 		},
 
 		destroy(index) {

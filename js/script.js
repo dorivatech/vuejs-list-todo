@@ -10,6 +10,13 @@ new Vue({
 		tasks: []
 	},
 
+	mounted() {
+		if(localStorage.getItem('tasks'))
+			this.tasks = JSON.parse(localStorage.getItem('tasks'))
+		else
+			localStorage.setItem('tasks', JSON.stringify(this.tasks))
+	},
+
 	methods: {
 		store() {
 			if (!this.form.task)

@@ -47,6 +47,7 @@ new Vue({
 
 		done(index) {
 			this.tasks[index].status = true;
+			localStorage.setItem('tasks', JSON.stringify(this.tasks));
 		}
 	}
 });

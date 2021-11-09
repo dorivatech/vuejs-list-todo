@@ -12,9 +12,9 @@ new Vue({
 
 	mounted() {
 		if(localStorage.getItem('tasks'))
-			this.tasks = JSON.parse(localStorage.getItem('tasks'))
+			this.tasks = JSON.parse(localStorage.getItem('tasks'));
 		else
-			localStorage.setItem('tasks', JSON.stringify(this.tasks))
+			localStorage.setItem('tasks', JSON.stringify(this.tasks));
 	},
 
 	methods: {
@@ -23,6 +23,7 @@ new Vue({
 				alert('Preencha a tarefa')
 			else {
 				this.tasks.push({ status: false, task: this.form.task });
+				localStorage.setItem('tasks', JSON.stringify(this.tasks))
 				this.form.task = '';
 			}
 		},

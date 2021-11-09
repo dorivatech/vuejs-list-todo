@@ -42,6 +42,7 @@ new Vue({
 
 		destroy(index) {
 			this.tasks.splice(index, 1);
+			localStorage.setItem('tasks', JSON.stringify(this.tasks));
 		},
 
 		done(index) {

@@ -1,10 +1,12 @@
-new Vue({
+
+let app = new Vue({
 	el: 'main#app',
 
 	data: {
 		form: {
 			index: null,
-			task: ''
+			task: '',
+			status: null
 		},
 
 		tasks: []
@@ -48,6 +50,13 @@ new Vue({
 		done(index) {
 			this.tasks[index].status = true;
 			localStorage.setItem('tasks', JSON.stringify(this.tasks));
+
+			if (this.areEveryTasksDone())
+				alert('Muitos parabéns por ter terminado todas as tarefas! Continue assim')
+		},
+
+		areEveryTasksDone() {
+			return this.tasks.filter(item => !item.status).length > 0 ? false : true;
 		}
 	}
 });
